@@ -37,7 +37,8 @@ let { src, dest } = require('gulp'),
     clean_css = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify-es').default,
-    imagemin = require('gulp-imagemin')
+    imagemin = require('gulp-imagemin'),
+    webp = require('gulp-webp')
 
 // Browser Sync
 function browserSync(params) {
@@ -62,6 +63,7 @@ function html() {
 function images() {
     return src(path.src.img).pipe(dest(path.build.img)).pipe(browsersync.stream())
 }
+
 
 // Fonts
 function fonts() {
